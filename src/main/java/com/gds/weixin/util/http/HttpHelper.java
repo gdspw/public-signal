@@ -3,6 +3,7 @@
  */
 package com.gds.weixin.util.http;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -334,6 +335,8 @@ public class HttpHelper {
             int status = httpClient.executeMethod(method);
             responseCharSet = method.getResponseCharSet();
             responseString = method.getResponseBodyAsString();
+
+            LOG.info("返回数据为：",responseString);
             if (status == HttpStatus.SC_OK) {
                 if ("ISO-8859-1".equals(responseCharSet)) {
                     responseString = new String(
