@@ -76,7 +76,7 @@
     <logger name="com.zaxxer" level="warn"/>
     <logger name="org.mybatis" level="warn"/>
 
-    <logger name="com.xiaofan.car" level="info"/>
+    <logger name="com.gds.weixin" level="info"/>
 
     <logger name="com.ppcredit.gypsophila.cloud" level="INFO"/>
 	<logger name="javax.activation" level="WARN"/>
