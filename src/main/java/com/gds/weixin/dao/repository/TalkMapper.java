@@ -5,6 +5,8 @@ package com.gds.weixin.dao.repository;
 
 import com.gds.weixin.dao.po.TalkPO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.data.repository.CrudRepository;
 
 
 /**
@@ -20,5 +22,8 @@ public interface TalkMapper{
      * @return
      */
     public Integer insertSelective(TalkPO talkPO);
+
+    public TalkPO findOne(
+            @Param("id") String id);
 
 }

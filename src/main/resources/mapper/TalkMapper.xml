@@ -18,14 +18,14 @@
 	</sql>
 
 	<!-- 查询（根据主键ID查询） -->
-	<select id="selectByPrimaryKey" resultType="com.gds.weixin.dao.po.TalkPO" parameterType="java.lang.Integer">
+	<select id="findOne" resultType="com.gds.weixin.dao.po.TalkPO">
 		 SELECT
 		 <include refid="Base_Column_List" />
 		 FROM t_talk
 		 WHERE id = #{id}
 	</select>
 
-	<!--删除：根据主键ID删除-->
+    <!--删除：根据主键ID删除-->
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		 DELETE FROM t_talk
 		 WHERE id = #{id}

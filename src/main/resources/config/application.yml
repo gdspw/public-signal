@@ -1,7 +1,34 @@
 spring:
-  profiles:
-    active: dev
   application:
     name: 微信公众号
+  redis:
+        database: 0
+        host: 47.93.20.244
+        password: qwer1234
+        pool:
+          max-active: 8
+          min-idle: 0
+          max-wait: 1
+          max-idle: 8
+        port: 6379
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: qwer1234
+      url: jdbc:mysql://47.93.20.244:3306/public_signal?useUnicode=true&characterEncoding=utf8
+      hikari:
+        maxLifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+        maximumPoolSize: 15
+  aop:
+    auto: true
+       #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+mybatis:
+    mapperLocations: classpath:mapper/*.xml
 server:
   port: 8011
+
+# 微信appId及appsecret
+WEIXIN_APP_ID: wx0e0a91edefebbe35
+WEIXIN_APP_SECRET: 0875089a5fcd5b09c6aabd33c1c8e177
+WEIXIN_APP_URL: https://api.weixin.qq.com/cgi-bin/token
+WEIXIN_APP_GRANT_TYPE: client_credential

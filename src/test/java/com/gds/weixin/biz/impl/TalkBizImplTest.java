@@ -23,6 +23,8 @@ import static org.junit.Assert.*;
 public class TalkBizImplTest extends BaseDaoTest{
 
 
+
+
     @Test
     public void weixinTest(){
         String appId = "wx0e0a91edefebbe35";
